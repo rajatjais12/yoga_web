@@ -25,7 +25,7 @@ SECRET_KEY = 'r-s)py!)+^6ff7-9sv04$og0&a^ay4*q^hfwc8+-=x^=1fb8g2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['rajatest.herokuapp.com/','rajatest.herokuapp.com/']
+ALLOWED_HOSTS = ['rajatest.herokuapp.com','127.0.0.1']
 
 
 # Application definition
