@@ -1,0 +1,54 @@
+ {% load static %}
+ <style type="text/css">
+ 	@media  (max-width: 760px){
+    #hero {
+        display: none;
+    }
+}
+ #hero{
+    height: 100%;
+    background-size:100% auto;
+    background-repeat: no-repeat;
+  }
+ @media (min-width: 760px) {
+    #hero1 {
+        display: none;
+    }
+}
+@media (min-width: 1000px) {
+    #gr2 {
+        display: none;
+    }
+}
+.zero{
+    height: 100%;
+    background-size:100% auto;
+    background-repeat: no-repeat;
+  } 
+   @media (min-width:760px) {
+    #zero {
+        display: none;
+    }
+}
+ </style>
+ <!--for laptop -->
+ <div class="container" style="background-image:url('/static/graphic/2.png')" id="hero" >
+    
+<dir class="container-fluid row">
+      <dir class="col-sm-4 col-xs-4" style="background-color:lavender;"> <h2>GO TO THE ANCIENT ERA OF YOGA</h2></dir>
+      <dir class="col-sm-2 col-xs-2"></dir>
+      <!--lander viwe text-->
+   
+<!--side grid1 respons-->
+<!--end grid1-->
+</dir>
+<dir class="container-fluid""> 
+{% include 'base/grid1.html'%} <!--for laptop view-->
+</dir>
+<div class="container-flude" >{% include 'base/product.html'%}</div>
+
+</div>
+<!--for mobile-->
+{% include 'base/mobile/1g.html'%}
+
+<!--for pc -->
