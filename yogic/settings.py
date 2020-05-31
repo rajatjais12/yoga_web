@@ -14,6 +14,7 @@ import django_heroku
 import os
 import dj_database_url
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -46,14 +47,14 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 #for email smtp server
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+    ]
 
 ROOT_URLCONF = 'yogic.urls'
 
@@ -81,11 +82,16 @@ WSGI_APPLICATION = 'yogic.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'Rajat@21',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -122,9 +128,11 @@ USE_TZ = True
 
 #Static files (CSS, JavaScript, Images)
 #https://docs.djangoproject.com/en/2.1/howto/static-files/
+
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
+STATIC_ROOT=os.path.join(BASE_DIR,'static')
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
