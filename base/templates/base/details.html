@@ -1,0 +1,87 @@
+{% load static %}
+
+
+
+<style>
+ 
+
+  h1 {
+    text-align: center;
+    color: #fff;
+  }
+}
+
+.container {
+  margin: auto;
+  border: #fff solid 3px;
+  background: #fff;
+}
+
+/* mak images fill their container*/
+img {
+  max-width: 100%;
+}
+.img-grid img:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+/* CSS Grid*/
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 5px;
+}
+
+/* Media Query for changing grid on bigger screens*/
+@media only screen and (min-width: 100px) {
+  .img-grid {
+    grid-template-columns: repeat(2, 2fr);
+  }
+}
+/* Bigger than Phones(tablet) */
+@media only screen and (min-width: 750px) {
+  .img-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Bigger than Phones(laptop / desktop) */
+@media only screen and (min-width: 970px) {
+  .img-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .img-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+</style>
+{% include 'base/navbar.html' %}
+<div>
+
+  <h1 style="color:transparent;">rajat</h1>
+<div class="container-flude">
+<div class="row">
+  <div class="col-xs-8">
+  <div class="img-grid">
+
+ {% for i in products %}
+  <a href="{{i.get_absolute_url}}"><img src="{% if i.image %}{{i.image.url}}{% endif %}" style="width:100%;">{{i.name}}</a>
+  {% endfor %}
+  </div></div>
+
+  <div class="col-xs-4">rajat</div>
+</div></div>
+
+
+
+
+
+
+
+
+</div></body>
